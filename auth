@@ -1,0 +1,23 @@
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
+
+// const GOOGLE_CLIENT_ID = "865027879350-3te1p6godf0hhqg807iumt86srrrprcp.apps.googleusercontent.com";
+// const GOOGLE_CLIENT_SECRET = "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";
+
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: "https://tpc-registration-form.herokuapp.com/google/callback",
+  passReqToCallback: true,
+},
+  function (request, accessToken, refreshToken, profile, done) {
+    return done(null, profile);
+  }));
+
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});

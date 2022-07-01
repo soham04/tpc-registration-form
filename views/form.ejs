@@ -1,0 +1,226 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="public/home.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<div class="container">
+    <h4>
+        <%= Company_Name %> Registration
+    </h4>
+    <span>
+        <div>
+            <a href="/logout"> <button type="button" style="float: right;" class="btn btn-info">Logout</button> </a>
+
+        </div>
+
+        <h3>
+            <%= name %>
+        </h3>
+    </span>
+    <h4>
+        <%= emailID %>
+    </h4>
+
+    <hr>
+    <form action="/api/upload" enctype="multipart/form-data" method="post" class="form-horizontal" role="form">
+
+        <h2>Registration</h2>
+
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <span class="help-block">All fields required </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="name" name="name" placeholder="Name" class="form-control"
+                    autofocus required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender" class="col-sm-3 control-label">Gender :</label>
+            <div class="col-sm-9">
+                <select id="gender" name="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
+            <div class="col-sm-9">
+                <input type="phoneNumber" pattern="[0-9]{10}" id="phoneNumber" name="phoneNumber"
+                    placeholder="Phone number" class="form-control" required>
+                <span class="help-block">Your phone number won't be disclosed anywhere </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">Degree : </label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="btechRadio" name="btechRadio" value="B.Tech" checked>B.Tech</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">Branch : </label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="btechRadio" name="branchRadio"
+                                value="Computer Science and Engineering" checked>Computer Science and Engineering
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">Passing Year : </label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="batchRadio" name="passYear" value="2023" checked>2023
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="CGPA" class="col-sm-3 control-label">CGPA* </label>
+            <div class="col-sm-9">
+                <input type="number" step="0.01" max="10" min="1" id="CGPA" name="CGPA" placeholder="Average till now"
+                    class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">class10% </label>
+            <div class="col-sm-9">
+                <input type="text" id="class10" name="class10" placeholder="class10%" class="form-control" autofocus
+                    required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">class12% </label>
+            <div class="col-sm-9">
+                <input type="text" id="class12" name="class12" placeholder="class12%" class="form-control" autofocus
+                    required>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control" name= "email">
+                    </div>
+                </div> -->
+
+
+
+        <!-- <div class="form-group">
+            <label for="position" class="col-sm-3 control-label">Choose a Position:</label>
+            <div class="col-sm-9">
+                <input type="checkbox" name="positions[]" value="A">A <br>
+                <input type="checkbox" name="positions[]" value="B">B <br>
+                <input type="checkbox" name="positions[]" value="C">C <br>
+                <input type="checkbox" name="positions[]" value="D">D <br>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="position" class="col-sm-3 control-label">Positions to apply for :</label>
+            <div class="col-sm-9">
+                <select id="position" name="position">
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="SDE">SDE</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">Batch : </label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="batchRadio" name="batchRadio" value="2019-23" checked>2019-23
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">College Name</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="college-name-radio" name="collegenameradio"
+                                value="Indian Institute of Information Technology Kottayam" checked>Indian Institute of
+                            Information Technology Kottayam
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label class="control-label col-sm-3">Course : </label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="btechRadio" name="btechRadio"
+                                value="B.Tech - Computer Science and Engineering" checked>B.Tech
+                            - Computer Science and Engineering
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">Resume : </label>
+            <input type="file" id="resume-file" accept=".pdf" name="someExpressFiles" required />
+        </div>
+        <!-- <input type="submit" value="Upload" /> -->
+
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form> <!-- /form -->
+    <script>
+        var uploadField = document.getElementById("resume-file");
+
+        uploadField.onchange = function () {
+            if (this.files[0].size >= 20971520) {
+                alert("Files more than 20MB are not allowed");
+                this.value = "";
+            };
+        };
+    </script>
+</div> <!-- ./container -->
