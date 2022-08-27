@@ -24,7 +24,7 @@ const responseSchema = new mongoose.Schema({
     resume: String,
 });
 
-const response = mongoose.model(process.env.FORM_DB_NAME, responseSchema);
+const response = mongoose.model(process.env.FORM_NAME, responseSchema);
 
 module.exports = {
     model: response
