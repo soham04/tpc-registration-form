@@ -19,7 +19,7 @@
     "google-auth-library": "^8.0.2",
     "googleapis": "^101.0.0",
     "json2htable": "^1.0.0",
-    "mongoose": "^6.3.8",
+    "mongoose": "^6.11.3",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16",
